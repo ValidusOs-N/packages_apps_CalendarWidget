@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.omnirom.android.monthcalendarwidget;
+package com.dirtyunicorns.calendarwidget;
 
 import android.annotation.TargetApi;
 import android.app.PendingIntent;
@@ -37,7 +37,7 @@ import android.widget.RemoteViews;
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
 
-public class MonthCalendarWidget extends AppWidgetProvider {
+public class CalendarWidget extends AppWidgetProvider {
     private static final String ACTION_PREVIOUS_MONTH
             = "com.example.android.monthcalendarwidget.action.PREVIOUS_MONTH";
     private static final String ACTION_NEXT_MONTH
@@ -59,7 +59,7 @@ public class MonthCalendarWidget extends AppWidgetProvider {
 
     private void redrawWidgets(Context context) {
         int[] appWidgetIds = AppWidgetManager.getInstance(context).getAppWidgetIds(
-                new ComponentName(context, MonthCalendarWidget.class));
+                new ComponentName(context, CalendarWidget.class));
         for (int appWidgetId : appWidgetIds) {
             drawWidget(context, appWidgetId);
         }
@@ -219,18 +219,18 @@ public class MonthCalendarWidget extends AppWidgetProvider {
         rv.setViewVisibility(R.id.prev_month_button, mini ? View.GONE : View.VISIBLE);
         rv.setOnClickPendingIntent(R.id.prev_month_button,
                 PendingIntent.getBroadcast(context, 0,
-                        new Intent(context, MonthCalendarWidget.class)
+                        new Intent(context, CalendarWidget.class)
                                 .setAction(ACTION_PREVIOUS_MONTH),
                         PendingIntent.FLAG_UPDATE_CURRENT));
         rv.setViewVisibility(R.id.next_month_button, mini ? View.GONE : View.VISIBLE);
         rv.setOnClickPendingIntent(R.id.next_month_button,
                 PendingIntent.getBroadcast(context, 0,
-                        new Intent(context, MonthCalendarWidget.class)
+                        new Intent(context, CalendarWidget.class)
                                 .setAction(ACTION_NEXT_MONTH),
                         PendingIntent.FLAG_UPDATE_CURRENT));
         rv.setOnClickPendingIntent(R.id.month_label,
                 PendingIntent.getBroadcast(context, 0,
-                        new Intent(context, MonthCalendarWidget.class)
+                        new Intent(context, CalendarWidget.class)
                                 .setAction(ACTION_RESET_MONTH),
                         PendingIntent.FLAG_UPDATE_CURRENT));
         rv.setViewVisibility(R.id.month_bar, numWeeks <= 1 ? View.GONE : View.VISIBLE);

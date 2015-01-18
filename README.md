@@ -1,8 +1,7 @@
-Android Month Calendar Widget Demo
+Calendar Widget
 ==================================
 Originally from Roman Nurik, https://github.com/romannurik/Android-MonthCalendarWidget
-Package renamed from "com.example.android" to "org.omnirom.android"
-
+Package renamed from "com.example.android" to "org.omnirom.android" to "com.dirtyunicorns.calendarwidget"
 
 A simple example of a responsive Month Calendar app widget for Android 4.1+.
 
