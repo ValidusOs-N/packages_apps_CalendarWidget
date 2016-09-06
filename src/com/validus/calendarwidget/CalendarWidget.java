@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.calendarwidget;
+package com.validus.calendarwidget;
 
 import android.annotation.TargetApi;
 import android.app.PendingIntent;
